@@ -22,9 +22,9 @@ module "enterprise_scale" {
         archetype_id = var.archetype_id
         parameters   = var.parameters
         access_control = {
-          "reader"      = [azuread_group.reader.object_id]
-          "contributor" = [azuread_group.contributor.object_id]
-          "owner"       = [azuread_group.owner.object_id]
+          "reader"      = var.access_control.reader
+          "contributor" = var.access_control.contributor
+          "owner"       = var.access_control.owner
         }
       }
     }
